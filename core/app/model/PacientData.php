@@ -49,10 +49,17 @@ class PacientData {
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new PacientData());
 	}
+
 //Obtengo los datos por SQL
 	public static function getBySQL($sql){
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PacientData());
+	}
+
+//Obtengo el numero de registros para paginar
+	public static function getTotalRows($sql){		
+		$query = Executor::doit($sql);
+		return Model::one($query[0],new PacientData());
 	}
 
 

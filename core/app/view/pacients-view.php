@@ -37,6 +37,19 @@
 	
 		<?php
 
+$sql_total_rows = "SELECT COUNT(*) as total_pacients FROM pacient WHERE is_active = 1";
+$num_total_rows = array();
+$num_total_rows = PacientData::getTotalRows($sql_total_rows);
+
+//if(count($num_total_rows)>0){
+	// si hay usuarios
+	?>
+	<div class="col-lg-8">
+	<h2 class="lead"><?php echo $num_total_rows->total_pacients; ?> elementos listados de 6 en 6</h2>
+	</div>
+	<?php
+//}
+	
 $users= array();
 if((isset($_GET["q"]) ) && ($_GET["q"]!="" ) ) {
 $sql = "select * from pacient where ";
