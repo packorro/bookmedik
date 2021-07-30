@@ -37,6 +37,13 @@ class PacientData {
 		Executor::doit($sql);
 	}
 
+	//Borro logicamente el registro
+	public function delLogic($id){
+		$sql = "update ".self::$tablename." set is_active = 0 where id=$id";
+		Executor::doit($sql);
+	}
+
+
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
@@ -64,7 +71,7 @@ class PacientData {
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by name,lastname";
+		$sql = "select * from ".self::$tablename." where is_active = 1 order by name,lastname";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PacientData());
 	}

@@ -45,7 +45,7 @@ $num_total_rows = PacientData::getTotalRows($sql_total_rows);
 	// si hay usuarios
 	?>
 	<div class="col-lg-8">
-	<h2 class="lead"><?php echo $num_total_rows->total_pacients; ?> elementos listados de 6 en 6</h2>
+	<h2 class="lead"><?php echo $num_total_rows->total_pacients; ?> elementos listados </h2>
 	</div>
 	<?php
 //}
@@ -54,7 +54,7 @@ $users= array();
 if((isset($_GET["q"]) ) && ($_GET["q"]!="" ) ) {
 $sql = "select * from pacient where ";
 if($_GET["q"]!=""){
-	$sql .= " name like '%$_GET[q]%' ORDER BY name   ";
+	$sql .= " name like '%$_GET[q]%' or  lastname like '%$_GET[q]%' and is_active = 1 ORDER BY name   ";
 }
 }
 
@@ -99,7 +99,7 @@ else {
 				<td style="width:280px;">
 				<a href="index.php?view=pacienthistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
 				<a href="index.php?view=editpacient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?view=delpacient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?view=delpacient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs" onClick="return confirm('Esta seguro de eliminar el paciente ?');" >Eliminar</a>
 				</td>
 				</tr>
 				<?php

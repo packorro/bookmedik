@@ -1,7 +1,5 @@
 <?php
-
-$client = PacientData::getById($_GET["id"]);
-$client->del();
-Core::redir("./index.php?view=pacients");
-
+$client = PacientData::delLogic($_GET["id"]);
+Core::alert("Actualizado exitosamente!");
+print "<script>window.location='index.php?view=pacients';</script>";
 ?>
