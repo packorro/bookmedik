@@ -38,6 +38,7 @@
     <label for="inputEmail1" class="col-lg-2 control-label">Fecha de Nacimiento</label>
     <div class="col-md-6">
       <input type="date" name="day_of_birth" class="form-control"  id="address1" placeholder="Fecha de Nacimiento">
+      <span class="validity"></span>
     </div>
   </div>
 
@@ -49,7 +50,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">E-mail*</label>
     <div class="col-md-6">
       <input type="text" name="email" class="form-control" id="email1" placeholder="Email">
     </div>
@@ -62,13 +63,13 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Enfermedad</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Enfermedad Cronica</label>
     <div class="col-md-6">
       <textarea name="sick" class="form-control" id="sick" placeholder="Enfermedad"></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Medicamentos</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Toma Medicamento Controlado?</label>
     <div class="col-md-6">
       <textarea name="medicaments" class="form-control" id="sick" placeholder="Medicamentos"></textarea>
     </div>

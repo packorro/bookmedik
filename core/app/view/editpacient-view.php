@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">E-mail*</label>
     <div class="col-md-6">
       <input type="text" name="email" value="<?php echo $user->email;?>" class="form-control" id="email" placeholder="Email">
     </div>
@@ -60,13 +60,13 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Enfermedad</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Enfermedad Cronica</label>
     <div class="col-md-6">
       <textarea name="sick" class="form-control" id="sick" placeholder="Enfermedad"><?php echo $user->sick;?></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Medicamentos</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Toma Medicamento Controlado?</label>
     <div class="col-md-6">
       <textarea name="medicaments" class="form-control" id="sick" placeholder="Medicamentos"><?php echo $user->medicaments;?></textarea>
     </div>

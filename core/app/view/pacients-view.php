@@ -54,7 +54,7 @@ $users= array();
 if((isset($_GET["q"]) ) && ($_GET["q"]!="" ) ) {
 $sql = "select * from pacient where ";
 if($_GET["q"]!=""){
-	$sql .= " name like '%$_GET[q]%'  ";
+	$sql .= " name like '%$_GET[q]%' ORDER BY name   ";
 }
 }
 

@@ -64,7 +64,7 @@ class PacientData {
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by created_at desc";
+		$sql = "select * from ".self::$tablename." order by name,lastname";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PacientData());
 	}
