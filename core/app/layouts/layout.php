@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title>BookMedik - Dashboard</title>
+  <title>Control Citas Medicas - Dashboard</title>
 
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -25,11 +25,11 @@
 <body>
 <?php if(isset($_SESSION["user_id"])):?>
   <div class="wrapper">
-
+  <?php $userd = UserData::getById($_SESSION["user_id"]);?>
       <div class="sidebar" data-color="blue">
       <div class="logo">
         <a href="./" class="simple-text">
-          BookMedik
+          Citas Medicas
         </a>
       </div>
 
@@ -62,7 +62,7 @@
                   <li>
                       <a href="./?view=categories">
                           <i class="fa fa-th-list"></i>
-                          <p>Categorias</p>
+                          <p>Areas</p>
                       </a>
                   </li>
                   <li>
@@ -91,8 +91,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./"><b>Sistema de Citas Medicas</b></a>
+            <a class="navbar-brand" href="./"><b>Sistema de Citas Medicas</b></a>      
+            
+            
           </div>
+
+                   
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
@@ -104,17 +108,20 @@
                 </ul>
               </li>
             </ul>
-<!--
-            <form class="navbar-form navbar-right" role="search">
+
+            <form class="navbar-form navbar-right" role="userdname">
               <div class="form-group  is-empty">
-                <input type="text" class="form-control" placeholder="Search">
+
+              <h4 class="lead"><?php echo $userd->username; ?></h4>           
+
                 <span class="material-input"></span>
               </div>
-              <button type="submit" class="btn btn-white btn-round btn-just-icon">
+              <!-- <button type="submit" class="btn btn-white btn-round btn-just-icon">
                 <i class="fa fa-search"></i><div class="ripple-container"></div>
               </button>
+              -->
             </form>
-            -->
+            
           </div>
         </div>
       </nav>

@@ -58,7 +58,8 @@ class ReservationData {
 	}
 
 	public static function getEvery(){
-		$sql = "select * from ".self::$tablename;
+		//$sql = "select * from ".self::$tablename;
+		$sql = "select a.*, concat(p.name ,' ' , p.lastname) as paciente from   ".self::$tablename. " a JOIN pacient p ON a.pacient_id = p.id";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}

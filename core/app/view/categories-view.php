@@ -2,10 +2,10 @@
 	<div class="col-md-12">
 <div class="card">
   <div class="card-header" data-background-color="blue">
-      <h4 class="title">Categorias</h4>
+      <h4 class="title">Areas</h4>
   </div>
   <div class="card-content table-responsive">
-	<a href="index.php?view=newcategory" class="btn btn-default"><i class='fa fa-th-list'></i> Nueva Categoria</a>
+	<a href="index.php?view=newcategory" class="btn btn-default"><i class='fa fa-th-list'></i> Nueva Area</a>
 
 		<?php
 
@@ -16,7 +16,7 @@
 
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Nombre</th>
+			<th><b>Nombre Area</b></th>
 			<th style="width:80px;"></th>
 			</thead>
 			<?php
@@ -35,7 +35,7 @@
 
 
 		}else{
-			echo "<p class='alert alert-danger'>No hay Categorias</p>";
+			echo "<p class='alert alert-danger'>No hay Areas</p>";
 		}
 
 

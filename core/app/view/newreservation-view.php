@@ -54,12 +54,12 @@ $payments = PaymentData::getAll();
     <textarea class="form-control" name="note" placeholder="Nota"></textarea>
     </div>
   </div>
-    <div class="form-group">
+   <!-- <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Enfermedad</label>
     <div class="col-lg-10">
     <textarea class="form-control" name="sick" placeholder="Enfermedad"></textarea>
     </div>
-  </div>
+  </div> 
       <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label>
     <div class="col-lg-10">
@@ -71,7 +71,7 @@ $payments = PaymentData::getAll();
     <div class="col-lg-10">
     <textarea class="form-control" name="medicaments" placeholder="Medicamentos"></textarea>
     </div>
-  </div>
+  </div>-->
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
     <div class="col-lg-10">

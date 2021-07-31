@@ -69,11 +69,11 @@ else {
 
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Nombre completo</th>
-			<th>Direccion</th>
-			<th>Email</th>
-			<th>Telefono</th>
-			<th>Area</th>
+			<th><b>Nombre completo</b></th>
+			<th><b>Direccion</b></th>
+			<th><b>Email</b></th>
+			<th><b>Telefono</b></th>
+			<th><b>Area</b></th>
 			<th></th>
 			</thead>
 			<?php

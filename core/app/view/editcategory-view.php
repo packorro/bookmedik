@@ -3,7 +3,7 @@
 	<div class="col-md-12">
 <div class="card">
   <div class="card-header" data-background-color="blue">
-      <h4 class="title">Editar Categoria</h4>
+      <h4 class="title">Editar Areas</h4>
   </div>
   <div class="card-content table-responsive">
 
@@ -21,7 +21,7 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="user_id" value="<?php echo $user->id;?>">
-      <button type="submit" class="btn btn-primary">Actualizar Categoria</button>
+      <button type="submit" class="btn btn-primary">Actualizar Area</button>
     </div>
   </div>
 </form>

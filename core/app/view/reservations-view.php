@@ -115,10 +115,10 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 			?>
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th>Asunto</th>
-			<th>Paciente</th>
-			<th>Medico</th>
-			<th>Fecha</th>
+			<th><b>Asunto</b></th>
+			<th><b>Paciente</b></th>
+			<th><b>Medico</b></th>
+			<th><b>Fecha</b></th>
 			<th></th>
 			</thead>
 			<?php

@@ -59,7 +59,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Telefono*</label>
     <div class="col-md-6">
-      <input type="text" name="phone" class="form-control" id="phone1" placeholder="Telefono">
+      <input type="text" name="phone" class="form-control" id="phone1" maxlength="10" placeholder="Telefono">
     </div>
   </div>
   <div class="form-group">

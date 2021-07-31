@@ -56,23 +56,10 @@ $payments = PaymentData::getAll();
     <div class="col-lg-4">
     <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
     </div>
-    <label for="inputEmail1" class="col-lg-2 control-label">Enfermedad</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="sick" placeholder="Enfermedad"><?php echo $reservation->sick;?></textarea>
-    </div>
-
+   
   </div>
 
-      <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Sintomas</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="symtoms" placeholder="Sintomas"><?php echo $reservation->symtoms;?></textarea>
-    </div>
-    <label for="inputEmail1" class="col-lg-2 control-label">Medicamentos</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="medicaments" placeholder="Medicamentos"><?php echo $reservation->medicaments;?></textarea>
-    </div>
-
+   
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>

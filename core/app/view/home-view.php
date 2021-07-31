@@ -2,7 +2,7 @@
 $thejson=null;
 $events = ReservationData::getEvery();
 foreach($events as $event){
-	$thejson[] = array("title"=>$event->title,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at);
+	$thejson[] = array("title"=>$event->paciente,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at);
 }
 ?>
 <script>
