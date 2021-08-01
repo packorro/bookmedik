@@ -45,7 +45,7 @@ $num_total_rows = PacientData::getTotalRows($sql_total_rows);
 	// si hay usuarios
 	?>
 	<div class="col-lg-8">
-	<h2 class="lead"><?php echo $num_total_rows->total_pacients; ?> elementos listados </h2>
+	<!-- <h2 class="lead"><?php echo $num_total_rows->total_pacients; ?> elementos listados </h2> -->
 	</div>
 	<?php
 //}

@@ -26,6 +26,12 @@ class CategoryData {
 		Executor::doit($sql);
 	}
 
+	//Borro logicamente el registro
+	public function delLogic($id){
+		$sql = "update ".self::$tablename." set is_active = 0 where id=$id";
+		Executor::doit($sql);
+	}
+
 // partiendo de que ya tenemos creado un objecto CategoryData previamente utilizamos el contexto
 	public function update(){
 		$sql = "update ".self::$tablename." set name=\"$this->name\" where id=$this->id";
@@ -39,7 +45,7 @@ class CategoryData {
 	}
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename;
+		$sql = "select * from ".self::$tablename." where is_active = 1 " ;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new CategoryData());
 

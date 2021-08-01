@@ -41,7 +41,7 @@ $users= array();
 if((isset($_GET["q"]) ) && ($_GET["q"]!="" ) ) {
 $sql = "select * from medic where ";
 if($_GET["q"]!=""){
-	$sql .= " name like '%$_GET[q]%'  ";
+	$sql .= " name like '%$_GET[q]%'  and is_active = 1 ";
 }
 }
 
@@ -88,7 +88,7 @@ else {
 				<td style="width:280px;">
 				<a href="index.php?view=medichistory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs">Historial</a>
 				<a href="index.php?view=editmedic&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?view=delmedic&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?view=delmedic&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs" onClick="return confirm('Esta seguro de eliminar al Medico ?');">Eliminar</a>
 				</td>
 				</tr>
 				<?php

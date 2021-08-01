@@ -27,6 +27,12 @@ class MedicData {
 		Executor::doit($sql);
 	}
 
+	//Borro logicamente el registro
+	public function delLogic($id){
+		$sql = "update ".self::$tablename." set is_active = 0 where id=$id";
+		Executor::doit($sql);
+	}
+
 // partiendo de que ya tenemos creado un objecto MedicData previamente utilizamos el contexto
 	public function update_active(){
 		$sql = "update ".self::$tablename." set last_active_at=NOW() where id=$this->id";
@@ -52,7 +58,7 @@ class MedicData {
 	}
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." order by created_at desc";
+		$sql = "select * from ".self::$tablename." where is_active = 1 order by name ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new MedicData());
 	}
