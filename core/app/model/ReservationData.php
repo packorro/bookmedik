@@ -38,13 +38,13 @@ class ReservationData {
 	}
 
 	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where id=$id";
+		$sql = "select * from ".self::$tablename." where id=$id and is_active = 1";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ReservationData());
 	}
 
 	public static function getRepeated($pacient_id,$medic_id,$date_at,$time_at){
-		$sql = "select * from ".self::$tablename." where pacient_id=$pacient_id and medic_id=$medic_id and date_at=\"$date_at\" and time_at=\"$time_at\"";
+		$sql = "select * from ".self::$tablename." where  is_active= 1 and pacient_id=$pacient_id and medic_id=$medic_id and date_at=\"$date_at\" and time_at=\"$time_at\"";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ReservationData());
 	}
@@ -52,40 +52,40 @@ class ReservationData {
 
 
 	public static function getByMail($mail){
-		$sql = "select * from ".self::$tablename." where mail=\"$mail\"";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and  mail=\"$mail\"";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ReservationData());
 	}
 
 	public static function getEvery(){
 		//$sql = "select * from ".self::$tablename;
-		$sql = "select a.*, concat(p.name ,' ' , p.lastname) as paciente from   ".self::$tablename. " a JOIN pacient p ON a.pacient_id = p.id";
+		$sql = "select a.*, concat(p.name ,' ' , p.lastname) as paciente from   ".self::$tablename. " a JOIN pacient p ON a.pacient_id = p.id ";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}
 
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." where date(date_at)>=date(NOW()) order by date_at";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and date(date_at)>=date(NOW()) order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}
 
 	public static function getAllPendings(){
-		$sql = "select * from ".self::$tablename." where date(date_at)>=date(NOW()) and status_id=1 and payment_id=1 order by date_at";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and date(date_at)>=date(NOW()) and status_id=1 and payment_id=1 order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}
 
 
 	public static function getAllByPacientId($id){
-		$sql = "select * from ".self::$tablename." where pacient_id=$id order by date_at";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and pacient_id=$id order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}
 
 	public static function getAllByMedicId($id){
-		$sql = "select * from ".self::$tablename." where medic_id=$id order by date_at";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and medic_id=$id order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}
@@ -96,15 +96,21 @@ class ReservationData {
 	}
 
 	public static function getOld(){
-		$sql = "select * from ".self::$tablename." where date(date_at)<date(NOW()) order by date_at";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and date(date_at)<date(NOW()) order by date_at";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
 	}
 	
 	public static function getLike($q){
-		$sql = "select * from ".self::$tablename." where title like '%$q%'";
+		$sql = "select * from ".self::$tablename." where is_active = 1 and title like '%$q%'";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ReservationData());
+	}
+
+	//Borro logicamente el registro
+	public function delLogic($id){
+		$sql = "update ".self::$tablename." set is_active = 0 where id=$id";
+		Executor::doit($sql);
 	}
 
 
