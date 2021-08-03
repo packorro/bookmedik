@@ -41,7 +41,7 @@ $users= array();
 if((isset($_GET["q"]) ) && ($_GET["q"]!="" ) ) {
 $sql = "select * from medic where ";
 if($_GET["q"]!=""){
-	$sql .= " name like '%$_GET[q]%'  and is_active = 1 ";
+	$sql .= " name like '%$_GET[q]%' or  lastname like '%$_GET[q]%' and is_active = 1 ORDER BY name   ";
 }
 }
 

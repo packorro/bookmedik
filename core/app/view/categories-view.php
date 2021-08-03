@@ -16,7 +16,7 @@
 
 			<table class="table table-bordered table-hover">
 			<thead>
-			<th><b>Nombre Area</b></th>
+			<th><b>Nombre de Area</b></th>
 			<th style="width:80px;"></th>
 			</thead>
 			<?php

@@ -45,7 +45,7 @@ class CategoryData {
 	}
 
 	public static function getAll(){
-		$sql = "select * from ".self::$tablename." where is_active = 1 " ;
+		$sql = "select * from ".self::$tablename." where is_active = 1 order by name  " ;
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new CategoryData());
 

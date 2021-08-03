@@ -70,7 +70,7 @@ $payments = PaymentData::getAll();
       <div>
         <div class="col-lg-4" id="suggestions"></div>    
       </div>  
-      <input type="text" name="pacient_id" class="form-control" autocomplete="off" id="demo" size="20" required></p>         
+      <input type="hidden" name="pacient_id" class="form-control" autocomplete="off" id="demo" size="20" readonly required></p>         
       
     </div>
     <div>

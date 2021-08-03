@@ -17,6 +17,7 @@ foreach($events as $event){
 			defaultDate: '<?php echo date('Y-m-d');?>',
 			editable: false,
 			eventLimit: true, // allow "more" link when too many events
+			timeFormat: 'hh:mm A',
 			events: <?php echo json_encode($thejson); ?>
 		});
 		
