@@ -71,12 +71,12 @@
                           <p>Reporte de Citas</p>
                       </a>
                   </li>
-                  <li>
-                      <a href="./?view=users">
-                          <i class="fa fa-users"></i>
-                          <p>Usuarios</p>
-                      </a>
-                  </li>
+                  <?php if ($userd->is_admin == 1) {                    
+                    echo '<li><a href="./?view=users"><i class="fa fa-users"></i><p>Usuarios</p></a></li>';
+                  }
+                  ?>
+                  
+                  
               </ul>
         </div>
       </div>

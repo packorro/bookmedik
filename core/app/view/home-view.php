@@ -2,7 +2,7 @@
 $thejson=null;
 $events = ReservationData::getEvery();
 foreach($events as $event){
-	$thejson[] = array("title"=>$event->paciente,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at);
+	$thejson[] = array("title"=>$event->paciente,"url"=>"./?view=editreservation&id=".$event->id,"start"=>$event->date_at."T".$event->time_at,"end"=>$event->date_at."T".$event->end_time_at);
 }
 ?>
 <script>
@@ -18,6 +18,13 @@ foreach($events as $event){
 			editable: false,
 			eventLimit: true, // allow "more" link when too many events
 			timeFormat: 'hh:mm A',
+			businessHours:
+    {
+
+            start: '07:00',
+            end:   '22:00',
+            dow: [0, 1, 2, 3, 4, 5, 6]
+    },
 			events: <?php echo json_encode($thejson); ?>
 		});
 		

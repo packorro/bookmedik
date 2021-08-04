@@ -93,7 +93,7 @@ $payments = PaymentData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Fecha/Hora</label>
     <div class="col-lg-5">
-      <input type="date" name="date_at" required class="form-control" id="inputEmail1" placeholder="Fecha">
+      <input type="date" name="date_at" required class="form-control" id="inputEmail1"   placeholder="Fecha">
     </div>
     <div class="col-lg-5">
       <input type="time" name="time_at" required class="form-control" id="inputEmail1" placeholder="Hora">
