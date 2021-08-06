@@ -7,13 +7,13 @@ class UserData {
 		$this->lastname = "";
 		$this->username = "";
 		$this->password = "";
-		$this->is_active = "0";
+		$this->is_active = "1";		
 		$this->created_at = "NOW()";
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (name,lastname,username,password,is_active,is_admin,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->username\",\"$this->password\",$this->is_active,$this->is_admin,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (name,lastname,username,password,is_active,is_admin,is_medic,created_at) ";
+		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->username\",\"$this->password\",$this->is_active,$this->is_admin,$this->is_medic,$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -28,7 +28,7 @@ class UserData {
 
 // partiendo de que ya tenemos creado un objecto UserData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",username=\"$this->username\",is_active=$this->is_active,is_admin=$this->is_admin where id=$this->id";
+		$sql = "update ".self::$tablename." set name=\"$this->name\",lastname=\"$this->lastname\",username=\"$this->username\",is_active=$this->is_active,is_medic=$this->is_medic,is_admin=$this->is_admin where id=$this->id";
 		Executor::doit($sql);
 	}
 

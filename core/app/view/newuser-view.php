@@ -44,11 +44,22 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Es administrador</label>
     <div class="col-md-6">
-<div class="checkbox">
-    <label>
-      <input type="checkbox" name="is_admin"> 
-    </label>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="is_admin"> 
+          </label>
+        </div>
+    </div>
   </div>
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Es doctor</label>
+    <div class="col-md-6">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="is_medic"> 
+          </label>
+        </div>
     </div>
   </div>
 

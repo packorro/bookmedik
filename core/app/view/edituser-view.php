@@ -56,6 +56,20 @@
 
 
   <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label" >Es doctor</label>
+    <div class="col-md-6">
+<div class="checkbox">
+    <label>
+      <input type="checkbox" name="is_medic" <?php if($user->is_medic){ echo "checked";}?>> 
+    </label>
+  </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label" >Es administrador</label>
     <div class="col-md-6">
 <div class="checkbox">

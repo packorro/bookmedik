@@ -35,9 +35,10 @@
 			<table class="table table-bordered table-hover">
 			<thead>
 			<th>Nombre completo</th>
-			<th>Nick</th>
+			<th>Usuario</th>
 			<th>Email</th>
 			<th>Activo</th>
+			<th>Doctor</th>
 			<th>Admin</th>
 			<th></th>
 			</thead>
@@ -46,10 +47,15 @@
 				?>
 				<tr>
 				<td><?php echo $user->name." ".$user->lastname; ?></td>
-				<td><?php echo $user->email; ?></td>
 				<td><?php echo $user->username; ?></td>
+				<td><?php echo $user->email; ?></td>
 				<td>
 					<?php if($user->is_active):?>
+						<i class="fa fa-check"></i>
+					<?php endif; ?>
+				</td>
+				<td>
+				<?php if($user->is_medic):?>
 						<i class="fa fa-check"></i>
 					<?php endif; ?>
 				</td>
