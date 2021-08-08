@@ -47,30 +47,27 @@
                           <p>Citas</p>
                       </a>
                   </li>
-                  <li>
-                      <a href="./?view=pacients">
-                          <i class="fa fa-male"></i>
-                          <p>Pacientes</p>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="./?view=medics">
-                          <i class="fa fa-support"></i>
-                          <p>Medicos</p>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="./?view=categories">
-                          <i class="fa fa-th-list"></i>
-                          <p>Areas</p>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="./?view=reports">
-                          <i class="fa fa-area-chart"></i>
-                          <p>Reporte de Citas</p>
-                      </a>
-                  </li>
+
+                  <?php if (($userd->is_active == 1) && ($userd->is_admin == 1)) {       
+                    echo '<li><a href="./?view=pacients"><i class="fa fa-male"></i><p>Pacientes</p></a></li>';
+                  }
+                  ?>
+
+                  <?php if (($userd->is_active == 1) && ($userd->is_admin == 1)) {       
+                    echo '<li><a href="./?view=medics"><i class="fa fa-support"></i><p>Medicos</p></a></li>';
+                  }
+                  ?>
+
+                  <?php if (($userd->is_active == 1) && ($userd->is_admin == 1)) {       
+                    echo '<li><a href="./?view=categories"><i class="fa fa-th-list"></i><p>Areas</p></a></li>';
+                  }
+                  ?>
+
+                  <?php if (($userd->is_active == 1) && ($userd->is_admin == 1)) {       
+                  echo '<li><a href="./?view=reports"><i class="fa fa-area-chart"></i><p>Reporte de Citas</p></a></li>';
+                  }
+                  ?>
+
                   <?php if ($userd->is_admin == 1) {                    
                     echo '<li><a href="./?view=users"><i class="fa fa-users"></i><p>Usuarios</p></a></li>';
                   }

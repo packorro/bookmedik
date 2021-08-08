@@ -55,12 +55,11 @@ $payments = PaymentData::getAll();
     <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
     <div class="col-lg-4">
     <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
-    </div>
-   
+    </div>   
   </div>
 
    
-  </div>
+  
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
     <div class="col-lg-4">

@@ -26,6 +26,7 @@
         <?php
 $pacients = PacientData::getAll();
 $medics = MedicData::getAll();
+$type_user = UserData::getById($_SESSION["user_id"]);
         ?>
 
   <div class="form-group">
@@ -74,7 +75,7 @@ $medics = MedicData::getAll();
 		<?php
 $users= array();
 if((isset($_GET["q"]) && isset($_GET["pacient_id"]) && isset($_GET["medic_id"]) && isset($_GET["date_at"])) && ($_GET["q"]!="" || $_GET["pacient_id"]!="" || $_GET["medic_id"]!="" || $_GET["date_at"]!="") ) {
-$sql = "select * from reservation where ";
+$sql = "select * from reservation where is_active = 1 and  ";
 if($_GET["q"]!=""){
 	$sql .= " title like '%$_GET[q]%' and note like '%$_GET[q] %' ";
 }
@@ -133,7 +134,7 @@ if($_GET["q"]!=""||$_GET["pacient_id"]!="" ||$_GET["medic_id"]!="" ){
 				<td><?php echo $user->date_at." ".$user->time_at; ?></td>
 				<td style="width:180px;">
 				<a href="index.php?view=editreservation&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?action=delreservation&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?action=delreservation&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs" onClick="return confirm('Esta seguro de eliminar la cita ?');">Eliminar</a>
 				</td>
 				</tr>
 				<?php

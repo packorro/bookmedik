@@ -1,4 +1,24 @@
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script> 
+$(document).ready(function() { 
+
+$(".is_medic_check").click(function() {
+    if($(this).is(":checked")) {
+        $(".answer").show();
+    } else {
+        $(".answer").hide();
+    }
+});
+});
+</script>
+
+
+
 <?php $user = UserData::getById($_GET["id"]);?>
+<?php $medics = MedicData::getAll();?>
 <div class="row">
 	<div class="col-md-12">
 <div class="card">
@@ -46,11 +66,11 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label" >Esta activo</label>
     <div class="col-md-6">
-<div class="checkbox">
-    <label>
-      <input type="checkbox" name="is_active" <?php if($user->is_active){ echo "checked";}?>> 
-    </label>
-  </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="is_active" <?php if($user->is_active){ echo "checked";}?>> 
+      </label>
+    </div>
     </div>
   </div>
 
@@ -58,21 +78,60 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label" >Es doctor</label>
     <div class="col-md-6">
-<div class="checkbox">
-    <label>
-      <input type="checkbox" name="is_medic" <?php if($user->is_medic){ echo "checked";}?>> 
-    </label>
-  </div>
+    <div class="checkbox">
+      <label>
+        <input class="is_medic_check" type="checkbox" name="is_medic_check" onchange="valueChanged()" <?php if($user->is_medic){ echo "checked";}?>>      
+      </label>
     </div>
+    </div> 
   </div>
 
+  
+  
+  <?php if($user->is_medic){ ?>
+  <fieldset class="answer">  
+  <div class="form-group" id="answer_check">
+    <label for="inputEmail1" class="col-lg-2 control-label" >Medico</label>
+    <div class="col-lg-4">
+      <select name="id_medic" class="form-control" required>
+      <option value="">-- SELECCIONE --</option>
+        <?php foreach($medics as $p):?>          
+          <option value="<?php echo $p->id; ?>" <?php if($p->id==$user->id_medic){ echo "selected"; }?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+        <?php endforeach; ?>
+      </select>
+    </div>
+  </div>
+  </fieldset>
+  <?php } elseif(is_null($user->id_medic)) { ?>
+    
+      <fieldset class="answer">  
+      <div class="form-group" id="answer_check">
+        <label for="inputEmail1" class="col-lg-2 control-label" >Medico</label>
+        <div class="col-lg-4">
+          <select name="id_medic" class="form-control" required>
+          <option value="">-- SELECCIONE --</option>
+            <?php foreach($medics as $p):?>          
+              <option value="<?php echo $p->id; ?>"><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+
+  <?php } else { ?>
+    <p>Default Content</p>
+  <?php } ?>
+ 
+
+  
 
 
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label" >Es administrador</label>
     <div class="col-md-6">
-<div class="checkbox">
+        <div class="checkbox">
     <label>
       <input type="checkbox" name="is_admin" <?php if($user->is_admin){ echo "checked";}?>> 
     </label>
