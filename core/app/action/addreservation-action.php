@@ -22,6 +22,7 @@ $r->price = $_POST["price"];
 $r->sick = $_POST["sick"];
 $r->symtoms = $_POST["symtoms"];
 $r->medicaments = $_POST["medicaments"];
+$r->tratamiento = $_POST["tratamiento"];
 
 
 $r->add();

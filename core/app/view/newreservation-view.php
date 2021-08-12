@@ -34,7 +34,7 @@ $(document).ready(function() {
                         $('#demo').val(id);                                                                   
                         //Hacemos desaparecer el resto de sugerencias
                         $('#suggestions').fadeOut(1000);
-                        alert('Has seleccionado el '+id+' '+$('#'+id).attr('data'));
+                        //alert('Has seleccionado el '+id+' '+$('#'+id).attr('data'));
                         return false;
                 });
             }
@@ -98,6 +98,12 @@ $payments = PaymentData::getAll();
     </div>
     <div class="col-lg-5">
       <input type="time" name="time_at" required class="form-control" id="inputEmail1" placeholder="Hora">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Tratamiento</label>
+    <div class="col-lg-10">
+    <textarea class="form-control" name="tratamiento" placeholder="Tratamiento"></textarea>
     </div>
   </div>
   <div class="form-group">

@@ -20,6 +20,7 @@ if(count($_POST)>0){
 	$user->sick = $_POST["sick"];
 	$user->symtoms = $_POST["symtoms"];
 	$user->medicaments = $_POST["medicaments"];
+	$user->tratamiento = $_POST["tratamiento"];
 
 	$user->update();
 

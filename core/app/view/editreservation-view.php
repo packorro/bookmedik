@@ -51,14 +51,20 @@ $payments = PaymentData::getAll();
       <input type="time" name="time_at" value="<?php echo $reservation->time_at; ?>" required class="form-control" id="inputEmail1" placeholder="Hora">
     </div>
   </div>
+
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
-    <div class="col-lg-4">
-    <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
+    <label for="inputEmail1" class="col-lg-2 control-label">Tratamiento</label>
+    <div class="col-lg-10">
+    <textarea class="form-control" name="tratamiento" placeholder="Tratamiento"><?php echo $reservation->tratamiento;?></textarea>
     </div>   
   </div>
 
-   
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Nota</label>
+    <div class="col-lg-10">
+    <textarea class="form-control" name="note" placeholder="Nota"><?php echo $reservation->note;?></textarea>
+    </div>   
+  </div>
   
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Estado de la cita</label>
