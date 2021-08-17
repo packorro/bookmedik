@@ -14,14 +14,22 @@ $con = $base->connect();
 $query = $con->query($sql);
 $found = false;
 $userid = null;
+$type_user = null;
+$medic_id = null;
 while($r = $query->fetch_array()){
 	$found = true ;
 	$userid = $r['id'];
+	$type_user = $r['is_medic'];
+	$medic_id = $r['id_medic'];
+
 }
 
 if($found==true) {
 //	print $userid;
 	$_SESSION['user_id']=$userid ;
+	$_SESSION['is_medic']=$type_user ;
+	$_SESSION['id_medic']=$medic_id ;
+
 //	setcookie('userid',$userid);
 //	print $_SESSION['userid'];
 	print "Cargando ... $user";

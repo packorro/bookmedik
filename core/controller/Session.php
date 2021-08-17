@@ -28,6 +28,12 @@ class Session{
 		else return false;
 	}
 
+	public static function getUID_medic(){
+		if(isset($_SESSION['id_medic']))
+			return $_SESSION['id_medic'];
+		else return false;
+	}
+
 }
 
 ?>

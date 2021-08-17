@@ -26,6 +26,7 @@
         <?php
 $pacients = PacientData::getAll();
 $medics = MedicData::getAll();
+$medic_id_get = MedicData::getById($_SESSION["id_medic"]);
 $type_user = UserData::getById($_SESSION["user_id"]);
         ?>
 
@@ -47,17 +48,23 @@ $type_user = UserData::getById($_SESSION["user_id"]);
 </select>
 		</div>
     </div>
+
     <div class="col-lg-2">
 		<div class="input-group">
 		  <span class="input-group-addon"><i class="fa fa-support"></i></span>
 <select name="medic_id" class="form-control">
 <option value="">MEDICO</option>
-  <?php foreach($medics as $p):?>
-    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["medic_id"]) && $_GET["medic_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>
-  <?php endforeach; ?>
+<?php if($medic_id_get->id >= 1){?>
+	<option value="<?php echo $medic_id_get->id; ?>" <?php if($medic_id_get->id==$medic_id_get->id){ echo "selected"; }?>  ><?php echo $medic_id_get->id." - ".$medic_id_get->name." ".$medic_id_get->lastname; ?></option>	
+  <?php } else { ?>
+
+  <?php foreach($medics as $p):?>	
+    <option value="<?php echo $p->id; ?>" <?php if(isset($_GET["medic_id"]) && $_GET["medic_id"]==$p->id){ echo "selected"; } ?>><?php echo $p->id." - ".$p->name." ".$p->lastname; ?></option>	
+  <?php endforeach; }?>
 </select>
 		</div>
     </div>
+
     <div class="col-lg-4">
 		<div class="input-group">
 		  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
